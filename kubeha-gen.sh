@@ -192,11 +192,11 @@ kubeadm init --config /etc/kubernetes/kubeadm-config.yaml
 mkdir -p $HOME/.kube
 cp -f /etc/kubernetes/admin.conf ${HOME}/.kube/config
 
-ETCD=`kubectl get pods -n kube-system 2>&1|grep etcd|awk '{print $3}'`
+ETCD=`kubectl get pods -n kube-system |grep etcd|awk '{print $3}'`
 echo "Waiting for etcd bootup..."
 while [ "${ETCD}" != "Running" ]; do
   sleep 1
-  ETCD=`kubectl get pods -n kube-system 2>&1|grep etcd|awk '{print $3}'`
+  ETCD=`kubectl get pods -n kube-system |grep etcd|awk '{print $3}'`
 done
 
 for index in 1 2; do
