@@ -152,7 +152,7 @@ ${HEALTH_CHECK}
   echo """
 apiVersion: kubeadm.k8s.io/v1alpha3
 kind: ClusterConfiguration
-kubernetesVersion: v1.12.2
+kubernetesVersion: v1.13.0
 apiServerCertSANs:
 - ${CP0_IP}
 - ${CP1_IP}
